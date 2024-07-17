@@ -1,84 +1,100 @@
-// import logo from './logo.svg';
-
 import './App.css';
-import React , {useState} from "react";
-import Title from './components/Title';
-import Module from './components/Module';
-import EventList from './components/EventList';
-import NewMovieForm from './components/NewMovieForm';
+// import React , {useState} from "react";
+// import Title from './components/Title';
+// import Module from './components/Module';
+// import EventList from './components/EventList';
+// import NewMovieForm from './components/NewMovieForm';
+import TripList from './components/TripList';
 
 
 function App() {
-  const [showEvents , setShowEvents] = useState(true);
-  const [showModal , setShowModal] = useState(false);
+  // const [showEvents , setShowEvents] = useState(true);
+  // const [showModal , setShowModal] = useState(false);
 
-  const [events , setEvents] = useState([
-    // {title : "THOR : LOVE AND THUNDER (2022)" , id : 1},
-    // {title : "THE GRAY MAN (2022)" , id : 2},
-    // {title : "THE SEA BEAST (2022)" , id : 3},
-    // {title : "TOP GUN: MAVERICK (2022)" , id : 4},
-    // {title : "DOCTOR STRANGE IN THE MULTIVERSE OF MADNESS (2022)" , id : 5},
-    // {title : "HUSTLE (2022)" , id : 6},
-  ])
+  // const [events , setEvents] = useState([
+  //   // {title : "THOR : LOVE AND THUNDER (2022)" , id : 1},
+  //   // {title : "THE GRAY MAN (2022)" , id : 2},
+  //   // {title : "THE SEA BEAST (2022)" , id : 3},
+  //   // {title : "TOP GUN: MAVERICK (2022)" , id : 4},
+  //   // {title : "DOCTOR STRANGE IN THE MULTIVERSE OF MADNESS (2022)" , id : 5},
+  //   // {title : "HUSTLE (2022)" , id : 6},
+  // ])
 
-  const handleClick = (id) => {
+  // const handleClick = (id) => {
     // console.log(id);
-    setEvents((preEvents) => {
-      return preEvents.filter((event) => {
-        return id !== event.id
-      })
-    })
-  }
+    // setEvents((preEvents) => {
+      // return preEvents.filter((event) => {
+        // return id !== event.id
+      // })
+    // })
+  // }
 
   // addMovie
-  const addMovie = (event) => {
+  // const addMovie = (event) => {
     // setEvents((prevEvent) => {
     //   return [...prevEvent , event]
     // })
-    setEvents([...events , event])
-    setShowModal(false)
-  }
+    // setEvents([...events , event])
+    // setShowModal(false)
+  // }
 
   // handleClose
-  const handleClose = () => {
-    setShowModal(false)
-  }
+  // const handleClose = () => {
+    // setShowModal(false)
+  // }
 
-  const handleOpen = ()=> {
-    setShowModal(true)
-  }
+  // const handleOpen = ()=> {
+    // setShowModal(true)
+  // }
 
-  const subtitle = "Latest Movies";
+  // const subtitle = "Latest Movies";
   
   return (
     <div className="App">
 
-    <Title title="My Favorite Movies" subtitle={subtitle}/>
+    {/* <Title title="My Favorite Movies" subtitle={subtitle}/> */}
 
-      {showEvents && 
+      {/* {showEvents && 
       <div>
         <button onClick={() => {setShowEvents(false)}}>Hide</button>
-      </div>}
+      </div>} */}
 
-    {!showEvents &&
+    {/* {!showEvents &&
       <div>
         <button onClick={() => {setShowEvents(true)}}>Show</button>
-      </div>}      
+      </div>}       */}
       
-    {showEvents &&
+    {/* {showEvents &&
       <EventList events={events} handleClick={handleClick}/>
-      }
+      } */}
 
-    {showModal &&
+    {/* {showModal &&
       <Module handleClose = {handleClose} isSalesModal={true}>
 
           <NewMovieForm addMovie ={addMovie} />
           
       </Module>
-    }
-    <br/>
-    <br/>
-    <button onClick={handleOpen}>Add New Modal</button>
+    } */}
+    {/* <br/> */}
+    {/* <br/> */}
+    {/* <button onClick={handleOpen}>Add New Modal</button> */}
+
+    <TripList />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   </div>
   );

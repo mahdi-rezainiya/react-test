@@ -6,9 +6,9 @@ export default function NewMovieForm(props) {
     const [title , setTitle] = useState("");
     const [date , setDate] = useState("");
     const [genre , setGenre] = useState("action");
-
+    
     const resetForm = () => {
-        setTitle("")
+        setTitle("");
         setDate("");
         setGenre("action")
     }
@@ -33,7 +33,7 @@ export default function NewMovieForm(props) {
 
         <label>
             <span>Movie Title:</span>
-            <input type="text" onChange={(e)=>setTitle(e.target.value)} value={title}/>
+            <input type="text" onChange={(e) => setTitle(e.target.value)} value={title}/>
         </label>
 
         <label>
