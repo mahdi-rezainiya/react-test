@@ -1,101 +1,30 @@
 import './App.css';
-// import React , {useState} from "react";
-// import Title from './components/Title';
-// import Module from './components/Module';
-// import EventList from './components/EventList';
-// import NewMovieForm from './components/NewMovieForm';
-import TripList from './components/TripList';
+import { BrowserRouter , Routes, Route , NavLink } from 'react-router-dom'
 
+import About from './pages/About';
+import Home from './pages/Home';
+import Contact from './pages/Contact';
+import Articles from './pages/Articles';
+// import { useState } from 'react';
 
 function App() {
-  // const [showEvents , setShowEvents] = useState(true);
-  // const [showModal , setShowModal] = useState(false);
-
-  // const [events , setEvents] = useState([
-  //   // {title : "THOR : LOVE AND THUNDER (2022)" , id : 1},
-  //   // {title : "THE GRAY MAN (2022)" , id : 2},
-  //   // {title : "THE SEA BEAST (2022)" , id : 3},
-  //   // {title : "TOP GUN: MAVERICK (2022)" , id : 4},
-  //   // {title : "DOCTOR STRANGE IN THE MULTIVERSE OF MADNESS (2022)" , id : 5},
-  //   // {title : "HUSTLE (2022)" , id : 6},
-  // ])
-
-  // const handleClick = (id) => {
-    // console.log(id);
-    // setEvents((preEvents) => {
-      // return preEvents.filter((event) => {
-        // return id !== event.id
-      // })
-    // })
-  // }
-
-  // addMovie
-  // const addMovie = (event) => {
-    // setEvents((prevEvent) => {
-    //   return [...prevEvent , event]
-    // })
-    // setEvents([...events , event])
-    // setShowModal(false)
-  // }
-
-  // handleClose
-  // const handleClose = () => {
-    // setShowModal(false)
-  // }
-
-  // const handleOpen = ()=> {
-    // setShowModal(true)
-  // }
-
-  // const subtitle = "Latest Movies";
-  
+  // const [loggedIn] = useState(false);
   return (
-    <div className="App">
-
-    {/* <Title title="My Favorite Movies" subtitle={subtitle}/> */}
-
-      {/* {showEvents && 
-      <div>
-        <button onClick={() => {setShowEvents(false)}}>Hide</button>
-      </div>} */}
-
-    {/* {!showEvents &&
-      <div>
-        <button onClick={() => {setShowEvents(true)}}>Show</button>
-      </div>}       */}
-      
-    {/* {showEvents &&
-      <EventList events={events} handleClick={handleClick}/>
-      } */}
-
-    {/* {showModal &&
-      <Module handleClose = {handleClose} isSalesModal={true}>
-
-          <NewMovieForm addMovie ={addMovie} />
-          
-      </Module>
-    } */}
-    {/* <br/> */}
-    {/* <br/> */}
-    {/* <button onClick={handleOpen}>Add New Modal</button> */}
-
-    <TripList />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <div className="App">
+    <BrowserRouter>
+    <nav>
+      <NavLink to='/'>Home</NavLink>
+      <NavLink to='/About'>About</NavLink>
+      <NavLink to='/test'>Test</NavLink>
+      <NavLink to='/contact'>Contact</NavLink>
+    </nav>
+      <Routes>
+        <Route path='/' element={<Home />}/>
+        <Route path='/contact' element={<Contact />}/>
+        <Route path='/about/*' element={<About/>} />
+        <Route path='/articles/:id' element={<Articles/>} />
+      </Routes>    
+    </BrowserRouter>
   </div>
   );
 }

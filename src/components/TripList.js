@@ -1,5 +1,4 @@
 import "./TripList.css";
-// import React, { useCallback, useEffect, useState } from 'react'
 import { useState } from 'react'
 import useFetch from "../hooks/useFetch";
 
